@@ -1,0 +1,5 @@
+2021-01-25 16:56:11,044 INFO o.s.b.StartupInfoLogger [restartedMain] Starting GitFocusApplication on INCHCMLP02374 with PID 25416 (D:\AWS\Spring Boot\GitFocus_Service\target\classes started by PS00440590 in D:\AWS\Spring Boot\GitFocus_Service)
+2021-01-25 16:56:11,051 DEBUG o.s.b.StartupInfoLogger [restartedMain] Running with Spring Boot v2.2.6.RELEASE, Spring v5.2.5.RELEASE
+2021-01-25 16:56:11,052 INFO o.s.b.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-01-25 16:56:13,382 INFO c.g.d.u.i.PullCommitUIServiceImpl [restartedMain] PullCommitUIServiceImpl init
+2021-01-25 16:56:13,994 INFO o.s.b.StartupInfoLogger [restartedMain] Started GitFocusApplication in 3.036 seconds (JVM running for 929.269)
