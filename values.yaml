@@ -6,7 +6,7 @@ replicaCount: 1
 appName: gitfocus
 
 image:
-  repository: 792429589635.dkr.ecr.ap-south-1.amazonaws.com/gitfocus-service:1
+  repository: 792429589635.dkr.ecr.ap-south-1.amazonaws.com/gitfocus-service
   tag: 1
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
