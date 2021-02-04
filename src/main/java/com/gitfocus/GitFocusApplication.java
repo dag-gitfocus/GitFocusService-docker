@@ -4,6 +4,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @author Tech Mahindra 
@@ -22,5 +24,15 @@ public class GitFocusApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(GitFocusApplication.class, args);
+	}
+	
+	@RestController
+	class HelloSpring {
+
+		@GetMapping("/hello-gitfocus")
+		public String helloSpringProfile() {
+
+			return "Hello, GitFocus ...! ";
+		}
 	}
 }
