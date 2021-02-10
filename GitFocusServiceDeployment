@@ -36,7 +36,7 @@ pipeline {
       steps {
         script {
           //dockerImage = docker.build --no-cache registry + ":$BUILD_NUMBER" 
-	    dockerImage = docker.build("-f Dockerfile", "--no-cache", "-t registry + :$BUILD_NUMBER")
+	    dockerImage = docker.build("-f Dockerfile", "--no-cache", "-t "792429589635.dkr.ecr.ap-south-1.amazonaws.com/gitfocus-service":$BUILD_NUMBER")
         }
       }
     }
