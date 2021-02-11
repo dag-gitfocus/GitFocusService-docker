@@ -1,5 +1,8 @@
 FROM adoptopenjdk/openjdk11:alpine-jre
-WORKDIR /var
+WORKDIR /GitFocus_Service_Deployment
 RUN pwd
 RUN ls -l
-ENTRYPOINT ["java","-jar","/var/jenkins_home/workspace/GitFocus_Service_Deployment/target/gitfocus-service.jar"]
+COPY  /target/gitfocus-service.jar  ./
+RUN pwd
+RUN ls -l
+ENTRYPOINT ["java","-jar","/GitFocus_Service_Deployment/gitfocus-service.jar"]
