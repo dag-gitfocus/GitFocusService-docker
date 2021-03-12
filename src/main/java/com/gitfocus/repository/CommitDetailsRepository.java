@@ -35,13 +35,15 @@ public interface CommitDetailsRepository extends JpaRepository<CommitDetails, Ob
 	 * @param endDate
 	 * @return getCommitDetailsForMemberForTwoWeek Results
 	 */
-	@Query(value = "SELECT distinct ur.repo_name ,cd.user_id,d,count(cd.commit_date) from gitfocus.commit_details\r\n"
+	@Query(value = "select res.reponame,res.userid,res.d,count(res.cdate) from \r\n" 
+	        +"(SELECT ur.repo_name as reponame ,cd.user_id as userid,d,cd.commit_date as cdate from gitfocus.commit_details\r\n"
 			+ "cd join gitfocus.branch_details bd ON (cd.repo_id=bd.repo_id and cd.branch_name=bd.branch_name)\r\n"
 			+ "join gitfocus.unit_repos ur on (ur.repo_id=bd.repo_id) RIGHT JOIN generate_series( \r\n"
 			+ "date_trunc('day', (cast(?3 as timestamp) - interval '13 days' )), \r\n"
 			+ "date_trunc('day', cast(?3 as timestamp)),'1 day' \r\n"
 			+ ") AS gs(d) ON d = date_trunc('day',cd.commit_date) and \r\n"
-			+ "ur.repo_name=?1 and cd.user_id=?2 group by ur.repo_name,cd.user_id, d order by d", nativeQuery = true)
+			+ "ur.repo_name=?1 and cd.user_id=?2 group by ur.repo_name,cd.user_id, d,cd.commit_date order by d) as res\r\n" 
+			+ "group by res.reponame,res.userid,res.d", nativeQuery = true)
 	List<Object[]> getCommitDetailsForMemberForTwoWeek(String repoName, String userId, String endDate);
 
 	/**
@@ -51,13 +53,15 @@ public interface CommitDetailsRepository extends JpaRepository<CommitDetails, Ob
 	 * @param endDate
 	 * @return getCommitDetailsForMemberForOneWeek Results
 	 */
-	@Query(value = "SELECT distinct ur.repo_name ,cd.user_id,d,count(cd.commit_date) from gitfocus.commit_details\r\n"
+	@Query(value = "select res.reponame,res.userid,res.d,count(res.cdate) from \r\n" 
+	        +"(SELECT distinct ur.repo_name as reponame ,cd.user_id as userid,d,cd.commit_date as cdate from gitfocus.commit_details\r\n"
 			+ "cd join gitfocus.branch_details bd ON (cd.repo_id=bd.repo_id and cd.branch_name=bd.branch_name)\r\n"
 			+ "join gitfocus.unit_repos ur on (ur.repo_id=bd.repo_id) RIGHT JOIN generate_series( \r\n"
 			+ "date_trunc('day', (cast(?3 as timestamp) - interval '6 days' )), \r\n"
 			+ "date_trunc('day', cast(?3 as timestamp)),'1 day' \r\n"
 			+ ") AS gs(d) ON d = date_trunc('day',cd.commit_date) and \r\n"
-			+ "ur.repo_name=?1 and cd.user_id=?2 group by ur.repo_name,cd.user_id, d order by d", nativeQuery = true)
+			+ "ur.repo_name=?1 and cd.user_id=?2 group by ur.repo_name,cd.user_id, d,cd.commit_date order by d) as res\r\n" 
+			+ "group by res.reponame,res.userid,res.d", nativeQuery = true)
 	List<Object[]> getCommitDetailsForMemberForOneWeek(String repoName, String userId, String endDate);
 
 	/**
