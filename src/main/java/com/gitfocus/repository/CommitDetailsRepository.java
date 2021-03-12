@@ -42,8 +42,8 @@ public interface CommitDetailsRepository extends JpaRepository<CommitDetails, Ob
 			+ "date_trunc('day', (cast(?3 as timestamp) - interval '13 days' )), \r\n"
 			+ "date_trunc('day', cast(?3 as timestamp)),'1 day' \r\n"
 			+ ") AS gs(d) ON d = date_trunc('day',cd.commit_date) and \r\n"
-			+ "ur.repo_name=?1 and cd.user_id=?2 group by ur.repo_name,cd.user_id, d,cd.commit_date order by d) as res\r\n" 
-			+ "group by res.reponame,res.userid,res.d", nativeQuery = true)
+			+ "ur.repo_name=?1 and cd.user_id=?2 group by ur.repo_name,cd.user_id, d,cd.commit_date ) as res\r\n" 
+			+ "group by res.reponame,res.userid,res.d order by res.d", nativeQuery = true)
 	List<Object[]> getCommitDetailsForMemberForTwoWeek(String repoName, String userId, String endDate);
 
 	/**
@@ -60,8 +60,8 @@ public interface CommitDetailsRepository extends JpaRepository<CommitDetails, Ob
 			+ "date_trunc('day', (cast(?3 as timestamp) - interval '6 days' )), \r\n"
 			+ "date_trunc('day', cast(?3 as timestamp)),'1 day' \r\n"
 			+ ") AS gs(d) ON d = date_trunc('day',cd.commit_date) and \r\n"
-			+ "ur.repo_name=?1 and cd.user_id=?2 group by ur.repo_name,cd.user_id, d,cd.commit_date order by d) as res\r\n" 
-			+ "group by res.reponame,res.userid,res.d", nativeQuery = true)
+			+ "ur.repo_name=?1 and cd.user_id=?2 group by ur.repo_name,cd.user_id, d,cd.commit_date) as res\r\n" 
+			+ "group by res.reponame,res.userid,res.d order by res.d", nativeQuery = true)
 	List<Object[]> getCommitDetailsForMemberForOneWeek(String repoName, String userId, String endDate);
 
 	/**
