@@ -38,9 +38,8 @@ securityContext: {}
   # runAsUser: 1000
 
 service:
-  type: NodePort
+  type: ClusterIP
   port: 4042
-
 ingress:
   enabled: false
   annotations: {}
