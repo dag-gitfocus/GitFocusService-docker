@@ -4,9 +4,8 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-//import org.keycloak.KeycloakSecurityContext;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,7 +24,7 @@ import com.gitfocus.git.db.model.Teams;
 @RestController
 public class ListTeamsUIController {
 	//private final HttpServletRequest request;
-	private static final Logger logger = LogManager.getLogger(ListTeamsUIController.class.getSimpleName());
+	private static final Logger logger = LoggerFactory.getLogger(ListTeamsUIController.class.getSimpleName());
 
 	public ListTeamsUIController() {
 		super();

@@ -1,7 +1,7 @@
 package com.gitfocus;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -12,7 +12,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class GitFocusApplication {
 
-	private static final Logger logger = LogManager.getLogger(GitFocusApplication.class.getSimpleName());
+	private static final Logger logger = LoggerFactory.getLogger(GitFocusApplication.class.getSimpleName());
 
 	public GitFocusApplication() {
 		super();

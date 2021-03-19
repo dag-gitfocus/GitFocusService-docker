@@ -3,8 +3,8 @@ package com.gitfocus.git.db.impl;
 import java.util.Date;
 import java.util.List;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,7 +33,7 @@ import com.gitfocus.util.GitFocusUtil;
 @Service
 public class PullMasterGitServiceImpl implements IPullMasterGitService {
 
-	private static final Logger logger = LogManager.getLogger(PullMasterGitServiceImpl.class.getSimpleName());
+	private static final Logger logger = LoggerFactory.getLogger(PullMasterGitServiceImpl.class.getSimpleName());
 
 	public PullMasterGitServiceImpl() {
 		super();

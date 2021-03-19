@@ -4,8 +4,8 @@ import java.text.ParseException;
 import java.util.Date;
 import java.util.List;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,7 +34,7 @@ import com.gitfocus.util.GitFocusUtil;
 @Service
 public class CommitDetailGitServiceImpl implements ICommitDetailGitService {
 
-	private static final Logger logger = LogManager.getLogger(CommitDetailGitServiceImpl.class.getSimpleName());
+	private static final Logger logger = LoggerFactory.getLogger(CommitDetailGitServiceImpl.class.getSimpleName());
 
 	public CommitDetailGitServiceImpl() {
 		super();

@@ -11,8 +11,8 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 /**
@@ -22,7 +22,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class SimpleCORSFilter implements Filter {
 
-	private static final Logger logger = LogManager.getLogger(SimpleCORSFilter.class.getSimpleName());
+	private static final Logger logger = LoggerFactory.getLogger(SimpleCORSFilter.class.getSimpleName());
 
 	public SimpleCORSFilter() {
 		logger.info("SimpleCORSFilter init");

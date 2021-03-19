@@ -1,7 +1,7 @@
 package com.gitfocus.exception;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 @ResponseStatus(value = HttpStatus.NOT_FOUND)
 public class ResourceNotFoundException extends RuntimeException {
 
-	private static final Logger logger = LogManager.getLogger(ResourceNotFoundException.class.getSimpleName());
+	private static final Logger logger = LoggerFactory.getLogger(ResourceNotFoundException.class.getSimpleName());
 
 	public ResourceNotFoundException() {
 		super();
