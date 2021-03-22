@@ -71,6 +71,7 @@ public class CommitDetailGitServiceImpl implements ICommitDetailGitService {
 	JSONObject commitDetailObj = null;
 	JSONObject commitObj1 = null;
 	JSONObject commitObj2 = null;
+	JSONObject commitObj3 = null;
 	String userId = null;
 	String commitDetailURI = null;
 	String commitDetailShaURI = null;
