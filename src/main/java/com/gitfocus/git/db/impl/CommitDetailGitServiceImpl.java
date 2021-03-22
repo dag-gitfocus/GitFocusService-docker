@@ -125,8 +125,12 @@ public class CommitDetailGitServiceImpl implements ICommitDetailGitService {
 							commitObj1 = commitDetailObj.getJSONObject("commit");
 							commitObj2 = commitObj1.getJSONObject("author");
 							
+							if (commitDetailObj.has("author") && !commitDetailObj.isNull("author")) {
+								commitObj3 = commitDetailObj.getJSONObject("author");
+								userId = commitObj3.getString("login");
+							}
+							
 							shaId = commitDetailObj.getString("sha");
-							userId = commitObj2.getString("name");
 							commitDate = commitObj2.getString("date");
 							cDate = GitFocusUtil.stringToDate(commitDate);
 							messgae = commitObj1.getString("message");
