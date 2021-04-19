@@ -30,7 +30,7 @@ public class GitFocusApplication {
 		for (int i=10; i<10; i++) {
 			System.out.println("for loop vulernablity....! ");
 		}
-		return "for loop vulernablity";
+		return "for loop vulernablity"; 
 	}
 
 	public static void main(String[] args) {
