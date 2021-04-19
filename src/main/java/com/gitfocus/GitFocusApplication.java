@@ -6,11 +6,14 @@ import org.slf4j.LoggerFactory;
 //import org.apache.logging.log4j.Logger;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @author Tech Mahindra 
  * Initial class to boot GitFocus Application
  */
+@RestController
 @SpringBootApplication
 public class GitFocusApplication {
 
@@ -22,8 +25,17 @@ public class GitFocusApplication {
 		logger.info("Starting GitFocus-Service Application..");
 	}
 
-	
+	@GetMapping(value = "/hello")
+	public String codeVulnerabiltyCheck() {
+		for (int i=10; i<10; i++) {
+			System.out.println("for loop vulernablity....! ");
+		}
+		return "for loop vulernablity";
+	}
+
 	public static void main(String[] args) {
 		SpringApplication.run(GitFocusApplication.class, args);
 	}
+
+
 }
