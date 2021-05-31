@@ -8,7 +8,7 @@ appName: gitfocus
 image:
   repository: 792429589635.dkr.ecr.ap-south-1.amazonaws.com/gitfocus-service
   tag: 11
-  pullPolicy: Always
+  pullPolicy: Always 
 java_opt_key: "--spring.profiles.active"
 java_opt_value: "prod"
   # Overrides the image tag whose default is the chart appVersion.
