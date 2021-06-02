@@ -91,7 +91,7 @@ public class GitFocusUtil {
 		logger.info("stringToDate - Date is  " + date);
 		Timestamp timestamp = null;
 		Date parsedDate = null;
-		try {
+		try  {
 			DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
 			dateFormat.setTimeZone(TimeZone.getTimeZone("GMT"));
 			parsedDate = dateFormat.parse(date);
